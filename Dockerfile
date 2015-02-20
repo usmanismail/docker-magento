@@ -2,7 +2,7 @@ FROM centos:centos6
 
 # because theses where the most stable php 5.3.x repos are!
 
-MAINTAINER paimpozhil@gmail.com
+MAINTAINER usman@techtraits.com
 
 # Centos default image for some reason does not have tools like Wget/Tar/etc so lets add them
 RUN yum -y install wget
