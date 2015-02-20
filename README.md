@@ -27,7 +27,7 @@ $ docker run --name memcache -d memcached
 Then finally run our docker-magento container
 
 ```
-docker run -d -p 80:80 -link mysql:db --link memcached:cache usmanismail/magento-docker
+docker run -d -p 80:80 -link mysql:db --link memcached:cache usmanismail/magento
 ```
 
 Now visit your public IP in your browser and you will see the installer ready to go.. enter the database password when installer prompts.
@@ -36,9 +36,8 @@ Now visit your public IP in your browser and you will see the installer ready to
 ### Builing the Image yourself.
 
 ```
-
 git clone https://github.com/usmanismail/docker-magento.git .
-docker build -t docker-magento .
+docker build -t magento .
 ```
 
 ## LICENSE
