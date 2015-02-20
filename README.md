@@ -33,7 +33,7 @@ docker run -d -p 80:80 -link mysql:db --link memcached:cache usmanismail/magento
 Now visit your public IP in your browser and you will see the installer ready to go.. enter the database password when installer prompts.
 
 
-### Builing the Image yourself.
+### Building the Image yourself.
 
 ```
 git clone https://github.com/usmanismail/docker-magento.git .
