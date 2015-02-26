@@ -16,6 +16,7 @@ else
 
 	echo "Adding Magento Caching"
 
+        echo "$CACHE_PORT_11211_TCP_ADDR	cache" >> /etc/hosts
 	sed -i -e  '/<\/config>/{ r /var/www/app/etc/mage-cache.xml' -e 'd}' /var/www/app/etc/local.xml.template
 
 	touch /firstrun
