@@ -4,7 +4,7 @@ FROM centos:centos6
 
 MAINTAINER usman@techtraits.com
 
-# Centos default image for some reason does not have tools like Wget/Tar/etc so lets add them
+# Centos default image for some reason does not have tools like Wget/Tar/etc so lets COPY them
 RUN yum -y install wget
 
 # EPEL has good RPM goodies!
@@ -14,7 +14,7 @@ RUN yum -y install which openssh-server php-mysql php-gd php-mcrypt php-zip php-
 
 RUN yum -y install tar mysql
 
-ADD default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
  
 RUN chkconfig php-fpm on
 
@@ -30,11 +30,12 @@ RUN mv /tmp/magento /var/www
 
 RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc && rm -f magento-*tar.gz
 
-ADD mage-cache.xml /var/www/app/etc/mage-cache.xml
+COPY mage-cache.xml /var/www/app/etc/mage-cache.xml
 
-ADD seturl.php /var/www/seturl.php
+COPY seturl.php /var/www/seturl.php
+COPY local.xml /var/www/app/etc/local.xml
 
-ADD start.sh /start.sh
+COPY start.sh /start.sh
 
 RUN chmod 0755 /start.sh 
 
