@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <WP_ThemeGrayscale>
+            <active>true</active>
+            <codePool>local</codePool>
+        </WP_ThemeGrayscale>
+    </modules>
+</config>

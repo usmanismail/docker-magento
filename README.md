@@ -27,7 +27,7 @@ $ docker run --name memcache -d memcached
 Then finally run our docker-magento container
 
 ```
-docker run -d -p 80:80 -link mysql:db --link memcached:cache usman/magento
+docker run -d -p 80:80 -link mysql:db -e MYSQL_HOST=XXXX -e MEMCACHED_HOST=XXX usman/magento:multinode
 ```
 
 Now visit your public IP in your browser and you will see the installer ready to go.. enter the database password when installer prompts.
