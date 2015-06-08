@@ -14,10 +14,8 @@ RUN chkconfig php-fpm on
 RUN chkconfig nginx on
 
 #install magento files 
-RUN cd /tmp && wget http://www.magentocommerce.com/downloads/assets/1.9.0.1/magento-1.9.0.1.tar.gz
-RUN cd /tmp && tar -zxvf magento-1.9.0.1.tar.gz
-RUN mv /tmp/magento /var/www
-RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc && rm -f magento-*tar.gz
+COPY magento /var/www/
+RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc
 COPY seturl.php /var/www/seturl.php
 COPY local.xml /var/www/app/etc/local.xml
 COPY start.sh /start.sh
