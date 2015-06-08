@@ -1,5 +1,7 @@
 #! /bin/bash
 
+/generateMageCache.sh ${MEMCACHED_HOSTS}
+
 sed -i "s/CRYPTO_KEY/${CRYPTO_KEY}/g" /var/www/app/etc/local.xml
 sed -i "s/MYSQL_HOST/${MYSQL_HOST}/g" /var/www/app/etc/local.xml
 sed -i "s/MYSQL_USER/${MYSQL_USER}/g" /var/www/app/etc/local.xml
