@@ -3,7 +3,7 @@ FROM centos:centos6
 MAINTAINER usman@techtraits.com
 
 # Centos default image for some reason does not have tools like Wget/Tar/etc so lets COPY them
-RUN yum -y install wget
+RUN yum -y install wget bind-utils
 
 # EPEL has good RPM goodies!
 RUN rpm -Uvh   http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
