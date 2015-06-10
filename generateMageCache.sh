@@ -1,8 +1,7 @@
 #!/bin/sh
 
-MEMCACHED_HOSTS=$1
+MEMCACHED_HOSTS=$(nslookup ${1} | tail -n+5 | grep Address | cut -f 2 -d ' ')
 
-IFS=","
 cat > /var/www/app/etc/mage-cache.xml << EOF
 <cache>
   <backend>memcached</backend><!-- apc / memcached / empty=file -->
